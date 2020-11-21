@@ -207,7 +207,6 @@ DIMMSC <- function(data, K=2, method_cluster_initial="kmeans", method_alpha_init
 #' @rdname DIMMSC
 #' @param cluster a vector of clustering member ship, e.g. mem of DIMMSC output
 #' @return plot_tsne_clusters outputs a figure of t-SNE and clusters
-#' @import cellrangerRkit
 #' @import stats
 #' @export
 #plot_tsne_clusters <- function(data, cluster){
