@@ -210,22 +210,22 @@ DIMMSC <- function(data, K=2, method_cluster_initial="kmeans", method_alpha_init
 #' @import cellrangerRkit
 #' @import stats
 #' @export
-plot_tsne_clusters <- function(data, cluster){
+#plot_tsne_clusters <- function(data, cluster){
 
-  if(length(cluster) != ncol(data)){
-    stop('the length of clustering member ship is different from the number of cells.\n')
-  }
+#  if(length(cluster) != ncol(data)){
+#    stop('the length of clustering member ship is different from the number of cells.\n')
+#  }
 
   # log2 normalization, PCA and t-SNE
-  cat('log2 normalization, PCA and t-SNE.\n')
-  kdata <- as.matrix(log2(data + 1))
-  res.pca <- prcomp(t(kdata), center = TRUE, scale. = TRUE)
-  res.pca$x <- res.pca$x[,1:10]
-  res.tsne <- run_tsne(res.pca)
+#  cat('log2 normalization, PCA and t-SNE.\n')
+#  kdata <- as.matrix(log2(data + 1))
+#  res.pca <- prcomp(t(kdata), center = TRUE, scale. = TRUE)
+#  res.pca$x <- res.pca$x[,1:10]
+#  res.tsne <- run_tsne(res.pca)
 
   # plot t-SNE and clusters
-  cat('plot t-SNE projection and clusters.\n')
-  tsne_clust <- data.frame(Barcode = as.factor(1:nrow(res.tsne$Y)),TSNE.1 = res.tsne$Y[,1], TSNE.2 = res.tsne$Y[,2], Cluster = cluster)
-  visualize_clusters(tsne_clust$Cluster, tsne_clust[c("TSNE.1","TSNE.2")], title="t-SNE and cell clustering", marker_size = 1)
-}
+#  cat('plot t-SNE projection and clusters.\n')
+#  tsne_clust <- data.frame(Barcode = as.factor(1:nrow(res.tsne$Y)),TSNE.1 = res.tsne$Y[,1], TSNE.2 = res.tsne$Y[,2], Cluster = cluster)
+#  visualize_clusters(tsne_clust$Cluster, tsne_clust[c("TSNE.1","TSNE.2")], title="t-SNE and cell clustering", marker_size = 1)
+#}
 
